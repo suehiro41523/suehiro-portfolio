@@ -25,6 +25,10 @@ function App() {
         <ul>
           {estate.map((x: any, index: number) => (
             <li key={index}>
+              <img
+                src={component.url + x.attributes.image.data[0].attributes.url}
+                alt=''
+              />
               <ReactMarkdown>{x.attributes.Description}</ReactMarkdown>
             </li>
           ))}
