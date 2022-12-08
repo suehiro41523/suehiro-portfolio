@@ -4,7 +4,8 @@
   "info": {
     "singularName": "estate",
     "pluralName": "estates",
-    "displayName": "estate"
+    "displayName": "estate",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,14 +16,15 @@
       "type": "richtext"
     },
     "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "Name": {
       "type": "string"
