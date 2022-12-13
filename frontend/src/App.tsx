@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Box } from '@chakra-ui/react'
 import logo from './logo.svg'
 import './App.css'
 import * as component from './component'
@@ -16,7 +17,7 @@ function App(): any {
   console.log(estate)
 
   return (
-    <div className="App">
+    <Box className="App" bg={'gradient.base'}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -34,7 +35,7 @@ function App(): any {
           Learn React
         </a>
       </header>
-    </div>
+    </Box>
   )
 }
 
