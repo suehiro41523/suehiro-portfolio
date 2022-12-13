@@ -11,6 +11,13 @@ const theme = extendTheme({
       base: 'linear-gradient(232.48deg, #1E3A8A -9.31%, #78350F 113.21%);',
     },
   },
+  styles: {
+    global: {
+      body: {
+        color: 'white',
+      },
+    },
+  },
 })
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)

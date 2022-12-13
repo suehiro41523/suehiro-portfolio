@@ -5,8 +5,8 @@ import './App.css'
 import * as component from './component'
 import ReactMarkdown from 'react-markdown'
 
-function App(): any {
-  const [estate, setEstate] = useState<any>([])
+function App(): JSX.Element {
+  const [estate, setEstate] = useState([])
   useEffect(() => {
     const fetchData = async (): Promise<any> => {
       const result = await component.readEstates()
