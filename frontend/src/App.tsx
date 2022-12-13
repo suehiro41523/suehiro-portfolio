@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Box } from '@chakra-ui/react'
 import './App.css'
+import style from './markdown-styles.module.css'
 import * as component from './component'
 import ReactMarkdown from 'react-markdown'
+import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 
 function App(): JSX.Element {
   const [estate, setEstate] = useState([])
@@ -29,7 +31,9 @@ function App(): JSX.Element {
                 src={component.url + x.attributes.image.data[0].attributes.url}
                 alt={x.attributes.image.data[0].attributes.alternativeText}
               />
-              <ReactMarkdown>{x.attributes.Description}</ReactMarkdown>
+              <ReactMarkdown className={style.reactMarkDown} components={ChakraUIRenderer()}>
+                {x.attributes.Description}
+              </ReactMarkdown>
             </li>
           ))}
         </ul>
