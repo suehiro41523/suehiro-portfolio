@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Box } from '@chakra-ui/react'
-import logo from './logo.svg'
 import './App.css'
 import * as component from './component'
 import ReactMarkdown from 'react-markdown'
@@ -10,6 +9,7 @@ function App(): JSX.Element {
   useEffect(() => {
     const fetchData = async (): Promise<any> => {
       const result = await component.readEstates()
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
       setEstate(result.data.data)
     }
     void fetchData()
@@ -19,14 +19,16 @@ function App(): JSX.Element {
   return (
     <Box className="App" bg={'gradient.base'}>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <ul>
           {estate.map((x: any, index: number) => (
             <li key={index}>
-              <img src={component.url + x.attributes.image.data[0].attributes.url} alt="" />
+              <img
+                src={component.url + x.attributes.image.data[0].attributes.url}
+                alt={x.attributes.image.data[0].attributes.alternativeText}
+              />
               <ReactMarkdown>{x.attributes.Description}</ReactMarkdown>
             </li>
           ))}
