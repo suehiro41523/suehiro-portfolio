@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import React, { useState, useEffect } from 'react'
 import { Box } from '@chakra-ui/react'
 import './App.css'
@@ -9,7 +10,8 @@ import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 function App(): JSX.Element {
   const [estate, setEstate] = useState([])
   useEffect(() => {
-    const fetchData = async (): Promise<any> => {
+    const fetchData = async (): Promise<void> => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const result = await component.readEstates()
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
       setEstate(result.data.data)
@@ -28,7 +30,9 @@ function App(): JSX.Element {
           {estate.map((x: any, index: number) => (
             <li key={index}>
               <img
+                // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
                 src={component.url + x.attributes.image.data[0].attributes.url}
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 alt={x.attributes.image.data[0].attributes.alternativeText}
               />
               <ReactMarkdown className={style.reactMarkDown} components={ChakraUIRenderer()}>
