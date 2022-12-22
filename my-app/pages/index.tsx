@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import * as component from './component';
+import * as component from '../component';
 import ReactMarkdown from 'react-markdown';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 import { List, ListItem } from '@chakra-ui/react';
