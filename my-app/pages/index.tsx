@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import * as component from '../component';
 import ReactMarkdown from 'react-markdown';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
-import { List, ListItem } from '@chakra-ui/react';
+import { List, ListItem, Box } from '@chakra-ui/react';
 
 import Head from 'next/head';
 import Image from 'next/image';
@@ -29,7 +29,12 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className={styles.main}>
+      <Box
+        color='white'
+        bgGradient={
+          'linear-gradient(232.48deg, #1E3A8A -9.31%, #78350F 113.21%);'
+        }
+      >
         <div className='App'>
           <header className='App-header'>
             <p>
@@ -166,7 +171,7 @@ export default function Home() {
             </p>
           </a>
         </div>
-      </main>
+      </Box>
     </>
   );
 }
